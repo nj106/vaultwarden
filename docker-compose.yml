@@ -6,6 +6,8 @@ services:
   vaultwarden:
     image: vaultwarden/server:latest
     container_name: vaultwarden
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
     network_mode: bridge
     restart: unless-stopped
     ports:
