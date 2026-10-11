@@ -10,6 +10,11 @@ services:
       - com.centurylinklabs.watchtower.enable=true
     network_mode: bridge
     restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     ports:
       - "8083:80"
     volumes:
